@@ -1,0 +1,152 @@
+.select_image {
+  text-overflow: ellipsis;
+  max-width: 60%
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
+  margin-top: 80px;
+  align-items: center
+}
+
+
+.images__header {
+  display: flex;
+  background-color: #ffffff;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+}
+
+.images__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.real_post {
+  display: flex;
+  background-color: #fff;
+  border: 3px solid #30b0ff;
+  padding: 10px 10px;
+  align-items: center;
+  margin-bottom:30px;
+  border-radius: 2px;
+  flex-direction: column;
+}
+
+.real_post_left img {
+  max-width: 30px;
+}
+
+.real_post_right {
+  display: flex;
+}
+
+.real_post_right strong {
+  margin-right: 5px;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_image {
+  position: fixed;
+  bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 48px;
+  /* background-color: #ffffff; */
+  z-index: 99999;
+  align-items: center;
+  padding: 5px;
+  left: 0;
+}
+.input_div {
+  display: flex;
+  flex-direction: row
+}
+
+.add_image .image_box {
+  width: 70vw;
+  min-width: 100px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.add_image .post-btn {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.image {
+  display: flex;
+  background-color: #fff;
+  padding: 10px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.images__right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.images__left {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex: 1;
+  padding-right: 5px;
+}
+
+.images__right_top {
+  display: flex;
+}
+
+.images__right_top strong {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.images__right_top span {
+  flex: 9;
+  margin-bottom: 10px;
+}
+
+.images__right_top div {
+  flex: 1;
+}
+
+.images__right_top div svg {
+  cursor: pointer;
+}
+
+.images__extras {
+  display: flex;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.images__extras span {
+  margin-right: 5px;
+}
+.post_image {
+  max-width: 500px;
+  width: 70vw
+}
+.image_img {
+  width: 50vw
+}
+.icon {
+  color: white
+}

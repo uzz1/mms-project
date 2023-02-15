@@ -1,0 +1,13 @@
+.home {
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.home__msg {
+  margin: 10px 0;
+}
+.container {
+  padding-top: 30px
+}

@@ -1,0 +1,84 @@
+.profile {
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.profile__top {
+  background-color: #fff;
+  padding: 5px 10px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-top: 80px;
+  text-align: center
+}
+
+
+.profile__header {
+  display: flex;
+  background-color: #ffffff;
+  padding: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top:80px
+}
+
+.profile__header__username {
+  font-weight: bold;
+  flex: 1;
+  font-size: 1.2rem;
+  padding-left: 10px;
+}
+
+
+.profile__header__logout {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile__header__logout button {
+  margin: 0;
+}
+
+.profile__body_top {
+  display: flex;
+  align-items: center;
+  margin: 30px 0px 0px;
+}
+
+.profile__body_top div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__body_top__img {
+  flex: 1;
+  max-width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px 0px 0px 5px;
+  border-radius: 50%;
+}
+
+.profile__body_middle {
+  margin: 0px 10px 20px;
+}
+
+.profile__body_middle__username {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile__body_middle__profile {
+  box-sizing: border-box;
+}
+
+.profile__body_edit-btn {
+  margin: 20px 50px;
+
+}
