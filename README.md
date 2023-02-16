@@ -16,6 +16,12 @@ The user is able to easily navigate with a mobile friendly, responsive design. A
 
 The technology stack used is ReactJS for the frontend, Flask for the backend and SQLite database for development and demonstration purposes.
 
+## 3.3 Algorithm Solution
+
+The solution for question 3.3 is located in:
+
+### `Algorithm/algorithm.py`
+
 ## Project Setup: Frontend
 
 In the project root directory, run:
