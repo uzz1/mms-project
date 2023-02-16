@@ -11,6 +11,7 @@ import { useGeolocated } from "react-geolocated";
 import {Button} from 'reactstrap'
 import GoogleMapReact from 'google-map-react';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import MAPS_API from '../../config' 
 
 const Images = (props) => {
   const { id } = props.match.params;
@@ -218,7 +219,7 @@ const Images = (props) => {
 <div style={{ height: '60vh', width: '70vw' }}>
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyB5o-gFEfMaWlniBtBOWkozXBz6mCsUrWg" }}
+        bootstrapURLKeys={{ key: MAPS_API }}
         // defaultCenter={defaultProps.center}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}

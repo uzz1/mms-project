@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# MMS Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project I have chosen to do an Image Capture Website for question 3.4.2. I have also added additional geolocation functionality to the project to combine some of the elements required for 3.4.1.
 
-## Available Scripts
+The project demonstrates an interface to review a set of images tracking the state of a location site.
 
-In the project directory, you can run:
+The app allows the user to take a picture of the location and view all the previous images along with the date and time of capture.
+
+Additionally the app captures the geolocation data of each location site and associated image. The dashboard allows the visualisation of the location sites relative to one another and the location page allows the visualisation of the image locations of the respective site, relative to one another, which would be useful for larger sites with multiple areas for taking photos.
+
+In the future this could be improved by categorising the images based on geolocation, so the state of the site can be extensively monitored based on the targeted areas within each site. This could be especially useful when capturing aerial images and mapping them in a grid pattern and then comparing them in a time series.
+
+The app also demonstates authorisation and authentication functionality, using encryption and tokenisation.
+
+The user is able to easily navigate with a mobile friendly, responsive design. And able to search for locations.
+
+The technology stack used is ReactJS for the frontend, Flask for the backend and SQLite database for development and demonstration purposes.
+
+## Project Setup: Frontend
+
+In the project root directory, run:
+
+### `cd mmsproject`
+
+In the project frontend client directory, run:
+
+### `npm install --legacy-peer-deps`
+
+Add the API Key to the `config.js` file
+
+Create the production build:
+
+### `npm run build`
+
+Start the project:
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Setup: Backend
 
-### `npm test`
+In the project root directory:
+Create a venv (virtual environment) using:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `python3 -m venv venv`
 
-### `npm run build`
+Start the virtual environment using:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `source venv/bin/activate`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install dependencies using:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `pip install -r requirements.txt`
 
-### `npm run eject`
+Set the environment variables:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `export FLASK_APP=manage.py`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `export FLASK_ENV=development`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Initialise the database:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `flask db init`
 
-## Learn More
+### `flask db migrate`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `flask db upgrade`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the server:
 
-### Code Splitting
+### `flask run`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+or
 
-### Analyzing the Bundle Size
+### `python manage.py`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Runs the server in the development mode.\
+Starts on [http://localhost:5000](http://localhost:5000)

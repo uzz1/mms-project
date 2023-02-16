@@ -7,13 +7,13 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import './Dashboard.css'
 import {Button} from 'reactstrap'
 import {Link} from 'react-router-dom'
+import MAPS_API from '../../config' 
 
 function Dashboard(props) {
   const { posts } = useContext(PostContext);
   const [currentUser, setCurrentUser] = useState('');
   const [msg, setMsg] = useState('');
 
-  
 
   const getCurrentUser = () => {
     fetch('/api/get_current_user', {
@@ -76,7 +76,7 @@ function Dashboard(props) {
     <div style={{ height: '60vh', width: '70vw' }}>
       {posts?
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyB5o-gFEfMaWlniBtBOWkozXBz6mCsUrWg" }}
+        bootstrapURLKeys={{ key: MAPS_API }}
         // defaultCenter={defaultProps.center}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
