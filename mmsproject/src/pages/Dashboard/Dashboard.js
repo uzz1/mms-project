@@ -68,12 +68,15 @@ function Dashboard(props) {
   return (
     <>
     <div className="dashboard">
-    <h1>Dashboard</h1>
+      <div className="dashboard__text">
+      <h1>Dashboard</h1>
     <div className='welcome'>
     <h5>Welcome: {currentUser.username}</h5>
     </div>
     <h3>Locations Sites: {posts.length}</h3>
-    <div style={{ height: '60vh', width: '70vw' }}>
+      </div>
+   
+    <div className="map__div">
       {posts?
       <GoogleMapReact
         bootstrapURLKeys={{ key: MAPS_API }}
@@ -89,9 +92,9 @@ function Dashboard(props) {
 :null}
     
     </div>
-<div>
+<div className="locations__btn">
   <Link to="/locations">
-  <Button>View Locations</Button>
+  <Button size="lg">View Locations</Button>
   </Link>
 
 </div>

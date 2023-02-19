@@ -1,5 +1,5 @@
 # dependencies
-/mmsproject/node_modules
+**/node_modules
 /.pnp
 .pnp.js
 
@@ -20,7 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**__pycache__/
 *.py[cod]
 *$py.class
 

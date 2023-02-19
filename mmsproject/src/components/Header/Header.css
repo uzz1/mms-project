@@ -7,6 +7,7 @@
   z-index: 3;
   flex-direction: row-reverse;
   justify-content: space-between;
+  
 }
 .navbrand {
   margin-right: 20px;
@@ -49,6 +50,11 @@
 }
 .navbar-main {
   background-color: white;
+  width: 100vw;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 

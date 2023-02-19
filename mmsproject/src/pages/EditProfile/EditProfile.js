@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import './EditProfile.css';
 import { checkAuth, getToken } from '../../utils';
 import ErrorField from '../../components/ErrorField/ErrorField';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const EditProfile = (props) => {
   const [img, setImg] = useState();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [bio, setBio] = useState('');
 
   const [errors, setErrors] = useState({
     username: '',
@@ -33,7 +33,6 @@ const EditProfile = (props) => {
         if (data.status === 200) {
           setUsername(data.user.username);
           setEmail(data.user.email);
-          setBio(data.user.bio ? data.user.bio : '');
         } else {
           setErrors({
             username: '',
@@ -81,7 +80,6 @@ const EditProfile = (props) => {
       .then(res => res.json())
       .then(data => {
         if (data.status === 200) {
-          document.getElementById('file').value = null;
           window.location.replace('/profile');
         } else {
           switch (data.field) {
@@ -133,16 +131,29 @@ const EditProfile = (props) => {
   return (
     <div className="edit_profile">
       <p className="edit_profile__top">Edit Profile</p>
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
-        
-          {errors.common && <ErrorField error={errors.common} />}
-          <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} required />
-          {errors.username && <ErrorField error={errors.username} />}
-          <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+      <Form onSubmit={handleSubmit} className="login__form">
+      {errors.common && <ErrorField error={errors.common} />}
+        <FormGroup>
+          <Label for="username">Username</Label>
+          <Input type="text" name="username" id="username" placeholder="Username" 
+          onChange={e => setUsername(e.target.value)} required
+          value={username}
+          />
+        {errors.username && <ErrorField error={errors.username} />}
+        </FormGroup>
+        <FormGroup>
+          <Label for="email">Email</Label>
+          <Input type="email" name="email" id="email" placeholder="Email" 
+          onChange={e => setEmail(e.target.value)} required
+          value={email}
+          />
           {errors.email && <ErrorField error={errors.email} />}
-         
-          <button type="submit" className="btn btn-primary">Update</button>
-        </form>
+
+        </FormGroup>
+        <button type="submit" className="btn btn-primary">Update</button>
+
+      </Form>
+      
     </div>
   );
 }

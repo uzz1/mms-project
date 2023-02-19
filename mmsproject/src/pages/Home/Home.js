@@ -4,9 +4,9 @@ import './Home.css';
 import { PostContext } from '../../contexts/PostContext';
 import Post from '../../components/Post/Post';
 import { checkAuth } from '../../utils';
-import { Responsive, WidthProvider } from "react-grid-layout";
-import { Container, Row, Col } from 'reactstrap';
-const ResponsiveGridLayout = WidthProvider(Responsive);
+import { Container, Row, Col, Button } from 'reactstrap';
+import {Link} from 'react-router-dom'
+
 
 const Home = (props) => {
   const { posts } = useContext(PostContext);
@@ -28,12 +28,21 @@ const Home = (props) => {
   }
   
   return (
-   
-       <Container className="container">
-        <Row>
+   <div className="home">
+     {/* <div className="dashboard">
+      <Link to="/dashboard">
+      <Button>Dashboard</Button>
+      </Link>
+      </div> */}
+    <div className="heading__div"><h2>Location Sites</h2></div>
+    
+ <Container className="container">
+        <Row className='row'>
         {postList}
         </Row>
        </Container>
+   </div>
+      
   );
 }
 

@@ -157,7 +157,6 @@ def get_comments(current_user):
                 "id": comment.id,
                 "comment": comment.comment,
                 "date_posted": comment.date_posted.strftime("%Y-%m-%d %H:%M:%S"),
-                "profile_pic": url_for('posts.static', filename='profile_pics/' + comment.commentator.profile_pic),
                 "commentator": comment.commentator.username,
             } for comment in post.comments]
 

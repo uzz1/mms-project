@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  margin-top: 80px;
+}
+.comments__img {
+  width: 100px;
+  padding-right: 10px;
 }
 
 
@@ -46,18 +51,20 @@
   position: fixed;
   bottom: 48px;
   display: flex;
-  min-width: 400px;
-  max-width: 400px;
+  left: 10px;
+  position: absolute;
   height: 48px;
   background-color: #ffffff;
   z-index: 99999;
   align-items: center;
   padding: 5px;
+  width: 90vw;
 }
 
 .add_comment .comment_box {
   margin-left: 5px;
   width: 100%;
+  
 }
 
 .add_comment .post-btn {
@@ -106,4 +113,8 @@
 
 .comments__extras span {
   margin-right: 5px;
+}
+.back {
+  left: 0;
+  position: absolute;
 }

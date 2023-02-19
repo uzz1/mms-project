@@ -1,13 +1,28 @@
 .home {
-  min-width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .home__msg {
   margin: 10px 0;
 }
 .container {
-  padding-top: 30px
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+  
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50px;
+}
+.heading__div {
+  text-align: center;
+}
+.dashboard {
+  left: 0;
+  position: absolute;
+  top: 0;
 }

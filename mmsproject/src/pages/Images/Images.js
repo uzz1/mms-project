@@ -300,9 +300,12 @@ const Images = (props) => {
 
   return (
     <div className="images">
+      <div className="back">
       <Link to="/locations">
       <Button>Back</Button>
       </Link>
+      </div>
+     
       <br></br>
       <br></br>
       <div className="images__header">

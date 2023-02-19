@@ -107,7 +107,7 @@ const Login = (props) => {
         <img src={Logo} alt="logo" className="login__logo" />
         <Form onSubmit={handleSubmit} className="login__form">
         <FormGroup>
-          <Label for="siteName">Username</Label>
+          <Label for="username">Username</Label>
           <Input type="text" name="username" id="username" placeholder="Your username" 
           onChange={e => setUsername(e.target.value)} required
           value={username}
@@ -115,7 +115,7 @@ const Login = (props) => {
         {errors.username && <ErrorField error={errors.username} />}
         </FormGroup>
         <FormGroup>
-          <Label for="siteName">Password</Label>
+          <Label for="password">Password</Label>
           <Input type="password" name="password" id="password" placeholder="Your password" 
           onChange={e => setPassword(e.target.value)} required
           value={password}

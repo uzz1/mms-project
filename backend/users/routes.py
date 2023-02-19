@@ -34,11 +34,6 @@ def save_image(img):
 @token_required
 def update_profile(current_user):
     try:
-        if request.files.get('img'):
-            img = request.files.get('img')
-            img_fn = save_image(img)
-
-            current_user.profile_pic = img_fn
 
         username = request.form.get('username')
         email = request.form.get('email')
@@ -61,8 +56,6 @@ def update_profile(current_user):
                     "msg": "Email already exists..."
                 }), 409
             current_user.email = email
-
-        current_user.bio = bio
 
         db.session.commit()
 
@@ -103,45 +96,6 @@ def get_current_user(current_user):
             "field": "common",
             "msg": "Oops, Some error happened! Try Again..."
         }), 500
-
-
-# @users.route('/search', methods=['POST'])
-# @token_required
-# def search(current_user):
-#     try:
-#         if request.form.get('term'):
-#             term = request.form.get('term')
-
-#             users = User.query.filter(and_(not_(
-#                 User.public_id == current_user.public_id), User.username.contains(term))).all()
-
-#             if len(users) > 0:
-#                 users = [{
-#                     "id": user.id,
-#                     "username": user.username,
-#                     "following": current_user.is_following(user),
-#                     "profile_pic": url_for('posts.static', filename='profile_pics/' + user.profile_pic)
-#                 } for user in users]
-#                 return jsonify({
-#                     "status": 200,
-#                     "users": users,
-#                     "msg": "Got some matching users!"
-#                 }), 200
-
-#             return jsonify({
-#                 "status": 404,
-#                 "msg": "No users found..."
-#             }), 404
-
-#         return jsonify({
-#             "status": 500,
-#             "msg": "Oops, Some error happened!"
-#         }), 500
-#     except:
-#         return jsonify({
-#             "status": 500,
-#             "msg": "Oops, Some error happened!"
-#         }), 500
 
 
 @users.route('/signup', methods=['POST'])

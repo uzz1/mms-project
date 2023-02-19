@@ -150,3 +150,7 @@
 .icon {
   color: white
 }
+.back {
+  left: 0;
+  position: absolute;
+}

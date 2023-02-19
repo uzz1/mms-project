@@ -18,7 +18,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Container
+  Container,
 } from 'reactstrap';
 
 
@@ -34,10 +34,10 @@ const Header = () => {
         <NavbarBrand href="/" className="me-auto">
 <Container className="navbrand">
   
-<Link to="/"  exact>
+<Link style={{textDecoration: 'none'}} to="/"  exact>
 <img src={Logo} alt="logo" className="login__logo" />
-
-        Assessment
+<h1>Assessment</h1>
+        
         </Link>
 </Container>
        

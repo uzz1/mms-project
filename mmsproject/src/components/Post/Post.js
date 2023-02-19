@@ -87,7 +87,7 @@ const Post = ({ id, public_id, author, img, post, date_posted, latitude, longitu
   }
 
   return (
-    <Col lg="4" md="4" sm="6" xs="12">
+    <Col lg="4" md="6" sm="6" xs="12">
       {modal && <div className="modal">
         <div className="content">
         <span onClick={toggleModal} className="close">&times;</span>
@@ -96,7 +96,7 @@ const Post = ({ id, public_id, author, img, post, date_posted, latitude, longitu
 
       </div>}
       <div className="post__top">
-        <strong>{post}</strong>
+        <h4>{post}</h4>
        
       </div>
       <div className="post__img">
@@ -104,8 +104,9 @@ const Post = ({ id, public_id, author, img, post, date_posted, latitude, longitu
       </div>
 
       {error && <ErrorField error={error} />}
-
-      <div className="post__fun">
+<div className="buttons__div">
+  <div  className="buttons__div2">
+  <div className="post__fun">
         <Link to={`/images/${id}`} className="comment_link">
           <Button><ImageIcon className="icon"/>Images</Button>
         </Link>
@@ -113,13 +114,12 @@ const Post = ({ id, public_id, author, img, post, date_posted, latitude, longitu
       
       <div className="post__fun">
       <Link to={`/comments/${id}`} className="comment_link">
-      <Button> <CommentOutlinedIcon className="icon" />Notes</Button>
-         
+      <Button> <CommentOutlinedIcon className="icon" />Notes</Button>   
         </Link>
       </div>
-     
-     
-      <div className="post__post">
+  </div>
+  <div  className="buttons__div3">
+  <div className="post__post">
         <strong>Author: </strong>{author} 
       </div>
       {isAuthor(public_id) ? (
@@ -129,6 +129,11 @@ const Post = ({ id, public_id, author, img, post, date_posted, latitude, longitu
         ) : (
          null
         )}
+</div>
+     
+     
+    
+</div>
     </Col>
   );
 }

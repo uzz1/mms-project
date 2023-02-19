@@ -6,7 +6,8 @@ import { CommentContext } from '../../contexts/CommentContext';
 import { PostContext } from '../../contexts/PostContext';
 import jwt from 'jsonwebtoken';
 import Cookie from 'js-cookie';
-
+import {Button} from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 const Comments = (props) => {
   const { id } = props.match.params;
@@ -67,7 +68,7 @@ const Comments = (props) => {
       return window.location.replace('/login')
     }
     if (!post) {
-      setMsg('No Posts Found!');
+      setMsg('No Locations Found!');
     } else {
       fetch('/api/comments', {
         method: 'GET',
@@ -134,8 +135,8 @@ const Comments = (props) => {
         <div className="real_post_left">
         </div>
         <div className="real_post_right">
-        <span>Site: </span>
         <br></br>
+        <img className="comments__img" src={post.img}/>
           <strong> {post.post}</strong>
         </div>
       </div>
@@ -147,13 +148,12 @@ const Comments = (props) => {
             {comments.map(comment => (
               <div key={comment.id} className="comment">
                 <div className="comments__left">
-                  <img className="avatar" src={comment.profile_pic} alt="profile" />
                 </div>
                 <div className="comments__right">
                   <div className="comments__right_top">
                     <strong>{comment.commentator}</strong>
                     <span>{comment.comment}</span>
-                    <button onClick={() => deleteComment(public_id, id, comment.id)}>delete</button>
+                    <Button onClick={() => deleteComment(public_id, id, comment.id)}>delete</Button>
 
                   </div>
                   <div className="comments__extras">
@@ -164,7 +164,7 @@ const Comments = (props) => {
             ))}
           </div>
         ) : (
-            <p className="msg">No Comments Found!!!</p >
+            <p className="msg">No Notes Found!!!</p >
           )
       }
       <form className="add_comment" onSubmit={handleSubmit}>
@@ -184,7 +184,13 @@ const Comments = (props) => {
   return (
     <div className="comments">
       <div className="comments__header">
-       <strong>Notes</strong>
+       <h2>Notes</h2>
+       
+      </div>
+      <div className="back">
+<Link to="/locations">
+<Button>Back</Button>
+</Link>
       </div>
       {msg && <p className="msg">{msg}</p>}
       {component}
